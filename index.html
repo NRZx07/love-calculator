@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE CALCULATOR</title>
+</head>
+<body class="calc">
+    <h1 id="love"> LOVE CALCULATOR</h1>
+    <div class="container" id="n1">
+        Your name
+        <input type="text" name="your name" placeholder="Your name">
+       <h1 class="heart"></h1>
+       
+
+        <br><br><br><div id="n2">
+        Partner name  <input type="text"  name="partner name" placeholder=" partner name"> </div>
+    </div>
+    
+    </div>
+   
+    <input type="submit" value="calculate"  id="calc"></div>
+    
+</body>
+</html>
+<script>
+    document.getElementById("calc").addEventListener("click", function() {
+        let name1 = document.querySelector("input[name='your name']").value.trim();
+        let name2 = document.querySelector("input[name='partner name']").value.trim();
+        let result = document.querySelector(".heart");
+
+        if (name1 === "" || name2 === "") {
+            result.innerText = "Please enter both names!";
+            result.style.color = "red";
+            return;
+        }
+
+        // Generate a random love percentage
+        let loveScore = Math.floor(Math.random() * 101);
+
+        // Display the result inside the <h1 class="heart">
+        result.innerText = `❤️ ${name1} & ${name2} = ${loveScore}% Love ❤️`;
+        result.style.color = "darkred";
+    });
+</script>
